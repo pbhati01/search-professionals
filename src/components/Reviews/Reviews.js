@@ -5,8 +5,6 @@ import styles from './Reviews.styles';
 const useStyles = createUseStyles(styles);
 
 const Reviews = ({ reviews }) => {
-  console.log('reviews=', reviews);
-  console.log('reviewsPercentage=', `${Math.round(((reviews / 5) * 100) / 10) * 10}%`);
   const classes = useStyles({
     starsInnerWidth:  `${Math.round(((reviews / 5) * 100) / 10) * 10}%`//Math.round((reviews / 5) * 100)
   });
