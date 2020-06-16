@@ -71,7 +71,7 @@ const SearchProsfessionals = () => {
   const fetchPros = (pageNo) => {
     const request = {
       data: prosSearchRequest,
-      headers: { 'x-pagination-offset': pageNo * pageLimit, 'x-pagination-limit': pageLimit}
+      headers: { 'x-pagination-offset': pageNo, 'x-pagination-limit': pageLimit}
     }
     dispatch(fetchProfessionals(request));
   }
@@ -130,7 +130,7 @@ const SearchProsfessionals = () => {
   };
   const changePaginationPages = (page, action) => {
     let pages = paginationPages;
-    if(action == 'next') {
+    if(action === 'next') {
       pages.shift();
       pages.push(page);
     }
@@ -154,7 +154,7 @@ const SearchProsfessionals = () => {
         <div>
           <label>Postcode</label>
           <input placeholder='Enter Postcode' className={classnames({[classes.required]: (postCode === '' && onSubmit)})}
-            value={postCode.value} onChange={handlePostCodeChange}/>
+            value={postCode} onChange={handlePostCodeChange}/>
           {(postCode === '' && onSubmit) ? <span>Please select postcode</span> : null}
           {(postCode !== '' && !postalCodeRegex.test(postCode)) ? <span>Please select valid input</span> : null}
         </div>

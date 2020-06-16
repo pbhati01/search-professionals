@@ -51,6 +51,7 @@ export default ({
       '& td': {
         textAlign: 'left',
         padding: 8,
+        borderRight: 'solid 1px #fafafa',
       },
       '& td:nth-child(2)': {
         overflowWrap: 'break-word',
@@ -63,14 +64,14 @@ export default ({
         fontSize: 12,
         borderRight: 'solid 1px #fafafa',
       },
-      '& th:nth-child(4)': {
+      '& th:nth-child(4), & td:nth-child(4)': {
         borderRight: 'none',
       },
       '& tr:nth-child(odd)': {
         backgroundColor: '#fff',
       },
       '& tr:nth-child(even)': {
-        backgroundColor: '#e3e3e3',
+        backgroundColor: '#eeebeb70',
       },      
     },
   },

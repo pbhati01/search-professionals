@@ -30,7 +30,6 @@ export const fetchProfessionals = (request) => {
   return (dispatch) => {
     api.fetchProfessionals(request)
       .then(({ status, headers, data }) => {
-        console.log(data.response)
         if (status === 200) {
           let professionals = data.response.pros.map( professional => {
             const {id, name, review_rating, main_address: { postcode }} = professional;
